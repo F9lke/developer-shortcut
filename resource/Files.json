@@ -1,0 +1,39 @@
+{
+  "Editors_IDEs": {
+    "Visual_Studio": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\Common7\\IDE\\devenv.exe",
+    "Visual_Studio_Code": "D:\\Visual Studio Code\\Reinstallation (active now)\\Microsoft VS Code\\Code.exe",
+    "PHPStorm": "D:\\PHPStorm\\PhpStorm 2018.1.5\\bin\\phpstorm64.exe",
+    "WebStorm": "D:\\Jetbrains\\Webstorm\\WebStorm 2018.1.5\\bin\\webstorm64.exe",
+    "CLion": "D:\\Jetbrains\\CLion\\CLion 2018.2\\bin\\clion64.exe",
+    "GoLand": "D:\\Jetbrains\\GoLand\\GoLand 182.3458.17\\bin\\goland.exe",
+    "PyCharm": "D:\\Jetbrains\\Pycharm\\PyCharm 2018.1.4\\bin\\pycharm64.exe",
+    "IntelliJ_IDEA": "D:\\Jetbrains\\IntelliJ IDEA\\IntelliJ IDEA 2018.1.5\\bin\\idea64.exe"
+  },
+  "Browsers": {
+    "Google_Chrome": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+    "Mozilla_Firefox": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+    "Opera": "C:\\Program Files\\Opera\\launcher.exe",
+    "Internet_Explorer": "C:\\Program Files\\internet explorer\\iexplore.exe"
+  },
+  "Utilities": {
+    "Xampp": "D:\\Xampp\\xampp_start.exe",
+    "Filezilla": "D:\\Filezilla\\FileZilla FTP Client\\filezilla.exe",
+    "WinSCP": "C:\\Program Files (x86)\\WinSCP\\WinSCP.exe",
+    "Github_Desktop": "C:\\Users\\User\\AppData\\Local\\GitHubDesktop\\GitHubDesktop.exe",
+    "Postman": "C:\\Users\\User\\AppData\\Local\\Postman\\app-6.1.4\\Postman.exe",
+    "Affinity_Designer": "D:\\Affinity\\Affinity Designer\\Designer.exe",
+    "Spotify": "C:\\Users\\User\\AppData\\Roaming\\Spotify\\Spotify.exe"
+  },
+  "Misc": {
+    "Task_Manager": "C:\\WINDOWS\\system32\\Taskmgr.exe",
+    "Command_Prompt": "C:\\WINDOWS\\system32\\cmd.exe",
+    "Powershell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "Git_Bash": "D:\\Eigene Dateien\\Git\\bin\\sh.exe",
+    "Explorer": "C:\\Windows\\explorer.exe"
+  },
+  "Websites": {
+    "Homepage": "https://floriangoetzrath.de/flo",
+    "Color_Picker": "https://color.adobe.com/de/create/color-wheel/",
+    "Youtube_Music": "https://music.youtube.com/"
+  }
+}
