@@ -17,9 +17,8 @@ namespace DeveloperShortcut
         // Main function of the program
         static void Main(string[] args)
         {
-
             GetAppInfo();
-
+            
             ActionController AC = new ActionController();
             ResourceController RC = new ResourceController();
 
@@ -33,8 +32,12 @@ namespace DeveloperShortcut
             foreach(var resource in ExecutableResources)
             {
                 counter++;
-                if(counter == 2) Console.WriteLine(misc.Utilities.StrExplode(':', resource)[2]);
-                if(counter == 2) AC.ExecuteProgram(misc.Utilities.StrExplode(':', resource)[2]);
+
+                if(counter == 2)
+                {
+                    AC.ExecuteProgram(misc.Utilities.TransferResourceToProgram(resource));
+                }
+                
             }
             
         } // static void Main()

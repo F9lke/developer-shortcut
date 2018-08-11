@@ -8,3 +8,12 @@ D:\Eigene Dateien\Desktop\Coding\DesktopApps\C#\DeveloperShortcut\DeveloperShort
 D:\Eigene Dateien\Desktop\Coding\DesktopApps\C#\DeveloperShortcut\DeveloperShortcut\bin\Debug\Newtonsoft.Json.dll
 D:\Eigene Dateien\Desktop\Coding\DesktopApps\C#\DeveloperShortcut\DeveloperShortcut\bin\Debug\Newtonsoft.Json.xml
 D:\Eigene Dateien\Desktop\Coding\DesktopApps\C#\DeveloperShortcut\DeveloperShortcut\obj\Debug\DeveloperShortcut.csproj.CopyComplete
+D:\Coding\Desktop Apps\C#\DeveloperShortcut\developer-shortcut\bin\Debug\DeveloperShortcut.exe.config
+D:\Coding\Desktop Apps\C#\DeveloperShortcut\developer-shortcut\bin\Debug\DeveloperShortcut.exe
+D:\Coding\Desktop Apps\C#\DeveloperShortcut\developer-shortcut\bin\Debug\DeveloperShortcut.pdb
+D:\Coding\Desktop Apps\C#\DeveloperShortcut\developer-shortcut\bin\Debug\Newtonsoft.Json.xml
+D:\Coding\Desktop Apps\C#\DeveloperShortcut\developer-shortcut\obj\Debug\DeveloperShortcut.csprojAssemblyReference.cache
+D:\Coding\Desktop Apps\C#\DeveloperShortcut\developer-shortcut\obj\Debug\DeveloperShortcut.csproj.CoreCompileInputs.cache
+D:\Coding\Desktop Apps\C#\DeveloperShortcut\developer-shortcut\obj\Debug\DeveloperShortcut.csproj.CopyComplete
+D:\Coding\Desktop Apps\C#\DeveloperShortcut\developer-shortcut\obj\Debug\DeveloperShortcut.exe
+D:\Coding\Desktop Apps\C#\DeveloperShortcut\developer-shortcut\obj\Debug\DeveloperShortcut.pdb

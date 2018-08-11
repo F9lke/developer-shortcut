@@ -13,7 +13,9 @@ namespace DeveloperShortcut.misc
     class Utilities
     {
 
-        // Reads a JSON file and returns its content in an array
+        /**
+         * Reads a JSON file and returns its content in an array
+         */
         public static JObject LoadJSON(string pathToFile)
         {
 
@@ -32,7 +34,10 @@ namespace DeveloperShortcut.misc
 
         } // public static Array LoadJSON()
 
-        // Checks if a string contains at least one of the needle strings
+
+        /**
+         * Checks if a string contains at least one of the needle strings
+         */
         public static bool ContainsAny(string haystack, string[] needles)
         {
             foreach (string needle in needles)
@@ -44,7 +49,9 @@ namespace DeveloperShortcut.misc
 
         } // public static bool ContainsAny()
 
-        // Outputs a colored line in the cli
+        /**
+         * Outputs a colored line in the cli
+         */
         public static void WriteColoredLine(string msg, ConsoleColor color)
         {
 
@@ -54,7 +61,9 @@ namespace DeveloperShortcut.misc
 
         } // static void WriteColoredLine()
 
-        // Explodes a string
+        /**
+         * Explodes a string
+         */
         public static string[] StrExplode(char delimiter, string target)
         {
 
@@ -75,6 +84,19 @@ namespace DeveloperShortcut.misc
             return explodedStr;
 
         } // public static List<string> StrExplode()
+
+        /**
+         * Returns the real path of a program from a given resource
+         */
+        public static string TransferResourceToProgram(string resource)
+        {
+
+            string drive = misc.Utilities.StrExplode(':', resource)[1].Replace(@"\\", @"\");
+            string path = misc.Utilities.StrExplode(':', resource)[2].Replace(@"\\", @"\");
+
+            return drive + ":" + path.Replace(",", "");
+
+        } // public static string TransferResourceToProgram()
 
     }
 }

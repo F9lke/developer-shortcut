@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -16,13 +17,30 @@ namespace DeveloperShortcut.controller
         public bool ExecuteProgram(string path)
         {
 
-            if (!path.Contains(".exe")) return false;
+            path = path.Replace("\"", "").Trim();
 
-            Process.Start(path);
+            if(File.Exists(path) || Directory.Exists(path))
+            {
+                
+                if (!path.Contains(".exe") && !path.Contains(".dll") && !path.Contains(".jar")) return false;
+                Process.Start(path);
 
-            return true;
+                string[] pathParts = misc.Utilities.StrExplode('\\', path);
+                misc.Utilities.WriteColoredLine("Program executed: " + pathParts[pathParts.Length - 1], ConsoleColor.Green);
 
-        } // public void ExecuteProgram()
+                return true;
+
+            }
+            else 
+            {
+             
+                string[] pathParts = misc.Utilities.StrExplode('\\', path);
+                misc.Utilities.WriteColoredLine("Failed to execute program " + pathParts[pathParts.Length - 1], ConsoleColor.Red);
+                return false;
+
+            }
+
+        } // public bool ExecuteProgram()
 
         // Executes a routine
         public bool ExecuteRoutine(Routine routine)
