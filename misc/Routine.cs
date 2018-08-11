@@ -11,7 +11,7 @@ namespace DeveloperShortcut
     { 
 
         public string RoutineName = "";
-        public Array RoutineFiles = new string[,] { };
+        public List<string> RoutineFiles = new List<string> { };
 
         // Constructor for the Routine class
         public Routine(string routineName)
@@ -25,7 +25,7 @@ namespace DeveloperShortcut
         } // public Routine()
 
         // Checks if a routine or an option exists
-        public static bool RoutineOrOptionExists(string name)
+        public bool RoutineOrOptionExists()
         {
 
             ResourceController RC = new ResourceController();
@@ -34,7 +34,7 @@ namespace DeveloperShortcut
 
             foreach(var resource in Resources)
             {
-                if (resource.Contains(name)) return true;
+                if (resource.Contains(RoutineName)) return true;
             }
 
             return false;

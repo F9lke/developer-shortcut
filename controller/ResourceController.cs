@@ -50,12 +50,31 @@ namespace DeveloperShortcut.controller
         public void LoadRoutineResources()
         {
 
-            if (FileResources == null || FileResources.Count == 0) LoadExecutableResources();
+            if (FileResources == null || FileResources.Count <= 0) LoadExecutableResources();
+
+            JObject fileContent = misc.Utilities.LoadJSON(RoutinesResourcePath);
+            dynamic dynJson = JsonConvert.DeserializeObject(fileContent.ToString());
+
+            foreach(var block in dynJson)
+            {
+                string[] lines = block.ToString().Split(
+                    new[] { Environment.NewLine },
+                    StringSplitOptions.None
+                );
+
+                foreach(string line in lines)
+                {
+                    if (misc.Utilities.ContainsAny(line, new string[] { "{", "}" })) continue;
+
+                    RoutineResources.Add(line);
+                }
+
+            }
 
         } // public static void LoadRoutineResources()
 
         // Returns an the configured settings of a routine
-        public Array GetRoutineConfigByName(string routineName)
+        public List<string> GetRoutineConfigByName(string routineName)
         {
 
             if(RoutineResources == null || RoutineResources.Count == 0)
@@ -65,8 +84,13 @@ namespace DeveloperShortcut.controller
                 GetRoutineConfigByName(routineName);
             }
 
-            return new string[,] { };
+            foreach(string routine in RoutineResources)
+            {
+                Console.WriteLine(routine);
+            }
 
+            return new List<string> {  };
+             
         } // public Array GetRoutineConfigByName()
 
     }

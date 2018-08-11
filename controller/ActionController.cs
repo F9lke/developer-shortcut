@@ -11,9 +11,40 @@ namespace DeveloperShortcut.controller
     class ActionController
     {
 
-        private Array PreviousActions = new string[,] {  };
+        private List<string> PreviousActions = new List<string> { };
 
-        // Runs a program
+        /**
+         * Prompts the user for a routine and redirects the request
+         */
+        public void ProcessRoutine()
+        {
+        
+            Console.WriteLine(Environment.NewLine + "Please insert the name of the routine you want to execute.");
+            dynamic usr_payload = Console.ReadLine();
+
+            if(!(usr_payload is string) && !(usr_payload is char)) ProcessRoutine();
+ 
+            Routine routine = AddRoutine(usr_payload);
+
+            if(routine.RoutineOrOptionExists())
+            {
+                if(!(ExecuteRoutine(routine)))
+                {
+
+                    try { misc.Utilities.WriteColoredLine("The routine you entered is not registered.", ConsoleColor.Red); }
+                    finally { 
+                        Console.WriteLine("Please press enter to terminate the process.");
+                        Console.ReadLine();
+                    }
+
+                }
+            }
+
+        } // public void ProcessRoutine()
+
+        /**
+         * Runs a program
+         */
         public bool ExecuteProgram(string path)
         {
 
@@ -42,7 +73,9 @@ namespace DeveloperShortcut.controller
 
         } // public bool ExecuteProgram()
 
-        // Executes a routine
+        /**
+         * Executes a routine
+         */
         public bool ExecuteRoutine(Routine routine)
         {
 
@@ -54,7 +87,9 @@ namespace DeveloperShortcut.controller
 
         } // public bool ExecuteRoutine()
 
-        // Structs a new Routine
+        /**
+         * Structs a new routine
+         */
         public static Routine AddRoutine(string routineName)
         {
 

@@ -28,7 +28,9 @@ namespace DeveloperShortcut
             List<string> ExecutableResources = RC.FileResources;
             List<string> RoutineResources = RC.RoutineResources;
 
-            int counter = 0;
+            AC.ProcessRoutine();
+
+            /*int counter = 0;
             foreach(var resource in ExecutableResources)
             {
                 counter++;
@@ -38,7 +40,7 @@ namespace DeveloperShortcut
                     AC.ExecuteProgram(misc.Utilities.TransferResourceToProgram(resource));
                 }
                 
-            }
+            }*/
             
         } // static void Main()
 
@@ -47,7 +49,7 @@ namespace DeveloperShortcut
         {
             
             string msg = AppName + ": Version " + AppVersion + " by " + AppAuthor;
-            ConsoleColor color = ConsoleColor.Green;
+            ConsoleColor color = ConsoleColor.Gray;
 
             misc.Utilities.WriteColoredLine(msg, color);
 
