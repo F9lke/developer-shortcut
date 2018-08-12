@@ -27,20 +27,10 @@ namespace DeveloperShortcut
 
             List<string> ExecutableResources = RC.FileResources;
             List<string> RoutineResources = RC.RoutineResources;
-
-            AC.ProcessRoutine();
-
-            /*int counter = 0;
-            foreach(var resource in ExecutableResources)
-            {
-                counter++;
-
-                if(counter == 2)
-                {
-                    AC.ExecuteProgram(misc.Utilities.TransferResourceToProgram(resource));
-                }
-                
-            }*/
+            
+            Routine routine = AC.ProcessRoutine();
+            if(!(AC.ExecuteRoutine(routine))) 
+                ActionController.addError("An error occured while executing the given routine.");
             
         } // static void Main()
 

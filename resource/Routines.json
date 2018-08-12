@@ -13,7 +13,10 @@
     "fast_dev": "Visual_Studio_Code;Explorer;Task_Manager;WinSCP;Xampp"
   },
   "testing": {
-    "rest": "Postman;PHPStorm;Xampp;Explorer;Task_Manager"
+    "rest": "Postman;PHPStorm;Xampp;Explorer;Task_Manager",
+    "cross_browser": "Internet_Expl;Opera;Mozilla_Firefox;Google_Chrome",
+    "test": "Postman;Spotify;Task_Manager;Filezilla;Explorer",
+    "web": "Color_Picker;Youtube_Music;Homepage"
   },
   "misc": {
     "spotify": "Spotify",

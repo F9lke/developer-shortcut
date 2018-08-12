@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace DeveloperShortcut.controller
 {
@@ -16,7 +17,7 @@ namespace DeveloperShortcut.controller
         /**
          * Prompts the user for a routine and redirects the request
          */
-        public void ProcessRoutine()
+        public Routine ProcessRoutine()
         {
         
             Console.WriteLine(Environment.NewLine + "Please insert the name of the routine you want to execute.");
@@ -28,17 +29,13 @@ namespace DeveloperShortcut.controller
 
             if(routine.RoutineOrOptionExists())
             {
-                if(!(ExecuteRoutine(routine)))
-                {
+                
+                return routine;
 
-                    try { misc.Utilities.WriteColoredLine("The routine you entered is not registered.", ConsoleColor.Red); }
-                    finally { 
-                        Console.WriteLine("Please press enter to terminate the process.");
-                        Console.ReadLine();
-                    }
-
-                }
             }
+            else ActionController.addError("The routine yout entered is not registered.");
+
+            return AddRoutine("Error");
 
         } // public void ProcessRoutine()
 
@@ -76,14 +73,29 @@ namespace DeveloperShortcut.controller
         /**
          * Executes a routine
          */
-        public bool ExecuteRoutine(Routine routine)
+        public bool ExecuteRoutine(Routine routine, bool loadWebPageOnURLEncounter = true)
         {
 
-            string Errors = "";
+            ResourceController RC = new ResourceController();
 
-            // Expression
+            string errors = null;
+            if(routine.RoutineFiles.Count() <= 0) errors = "no_routinefiles_found;";
+            
+            foreach(string file in routine.RoutineFiles)
+            {
+                string filepath = RC.GetProgramPath(file.Trim());
 
-            return String.IsNullOrEmpty(Errors) ? true : false;
+                // TODO: Fix bug involving the open website mechanic
+
+                if(filepath.Contains("http://") || filepath.Contains("https://"))
+                {
+                    if(loadWebPageOnURLEncounter) System.Diagnostics.Process.Start(filepath);
+                    continue;
+                }
+                else if(!ExecuteProgram(filepath)) ActionController.addError("An error occured while executing a program.");
+            }
+
+            return String.IsNullOrEmpty(errors) ? true : false;
 
         } // public bool ExecuteRoutine()
 
@@ -96,6 +108,26 @@ namespace DeveloperShortcut.controller
             return new Routine(routineName);
 
         } // public static Routine AddRoutine()
+
+        /**
+         * Throws a custom erro
+         */
+        public static void addError(string msg)
+        {
+
+            if(msg.Length > 0)
+            {
+
+                Console.WriteLine(Environment.NewLine);
+
+                try { misc.Utilities.WriteColoredLine(msg, ConsoleColor.Red); }
+                finally { 
+                    misc.Utilities.WriteColoredLine("Please press enter to proceed.", ConsoleColor.DarkGray);
+                    Console.ReadLine();
+                }
+            }
+
+        } // public static void addError(string msg)
 
     }
 }

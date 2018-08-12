@@ -13,10 +13,10 @@
     "Google_Chrome": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
     "Mozilla_Firefox": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
     "Opera": "C:\\Program Files\\Opera\\launcher.exe",
-    "Internet_Explorer": "C:\\Program Files\\internet explorer\\iexplore.exe"
+    "Internet_Expl": "C:\\Program Files\\internet explorer\\iexplore.exe"
   },
   "Utilities": {
-    "Xampp": "D:\\Xampp\\xampp_start.exe",
+    "Xampp": "D:\\Xampp\\xampp-control.exe",
     "Filezilla": "D:\\Filezilla\\FileZilla FTP Client\\filezilla.exe",
     "WinSCP": "C:\\Program Files (x86)\\WinSCP\\WinSCP.exe",
     "Github_Desktop": "C:\\Users\\User\\AppData\\Local\\GitHubDesktop\\GitHubDesktop.exe",

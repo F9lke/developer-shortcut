@@ -11,7 +11,7 @@ namespace DeveloperShortcut
     { 
 
         public string RoutineName = "";
-        public List<string> RoutineFiles = new List<string> { };
+        public string[] RoutineFiles = new string[] { };
 
         // Constructor for the Routine class
         public Routine(string routineName)
@@ -20,7 +20,7 @@ namespace DeveloperShortcut
             ResourceController RC = new ResourceController();
 
             RoutineName = routineName;
-            dynamic RoutineConfig = RC.GetRoutineConfigByName(RoutineName);
+            RoutineFiles = RC.GetRoutineFiles(RoutineName);
 
         } // public Routine()
 

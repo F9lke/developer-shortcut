@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace DeveloperShortcut.controller
 {
@@ -74,24 +75,55 @@ namespace DeveloperShortcut.controller
         } // public static void LoadRoutineResources()
 
         // Returns an the configured settings of a routine
-        public List<string> GetRoutineConfigByName(string routineName)
+        public string[] GetRoutineFiles(string routineName)
         {
 
             if(RoutineResources == null || RoutineResources.Count == 0)
             {
                 LoadExecutableResources();
                 LoadRoutineResources();
-                GetRoutineConfigByName(routineName);
+                GetRoutineFiles(routineName);
             }
 
-            foreach(string routine in RoutineResources)
+            foreach(string line in RoutineResources)
             {
-                Console.WriteLine(routine);
+                string cleanline = line.Replace("\"", "");
+                cleanline = cleanline.Replace(",", "");
+                
+                string lineName = misc.Utilities.StrExplode(':', cleanline)[0].ToLower().Trim();
+
+                if(lineName.Equals(routineName.ToLower().Trim()))
+                {
+
+                    string[] lineFiles = misc.Utilities.StrExplode(';', misc.Utilities.StrExplode(':', cleanline)[1]);
+
+                    return lineFiles;
+
+                }
             }
 
-            return new List<string> {  };
+            return new string[] {  };
              
         } // public Array GetRoutineConfigByName()
+
+         /**
+         * Returns the configured path to a given program
+         */
+        public string GetProgramPath(string programName)
+        {
+
+            if (FileResources == null || FileResources.Count <= 0) LoadExecutableResources();
+
+            foreach(var line in this.FileResources)
+            {
+                if(line.Contains(programName)) 
+                    return misc.Utilities.TransferResourceToProgram(line).Replace("\"", "");
+            }
+
+            ActionController.addError("No valid path was found for the program " + programName.Trim() + " found.");
+            return "";
+
+        } // public static string getProgramPath(string programName)
 
     }
 }
