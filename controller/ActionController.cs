@@ -85,11 +85,9 @@ namespace DeveloperShortcut.controller
             {
                 string filepath = RC.GetProgramPath(file.Trim());
 
-                // TODO: Fix bug involving the open website mechanic
-
                 if(filepath.Contains("http://") || filepath.Contains("https://"))
                 {
-                    if(loadWebPageOnURLEncounter) System.Diagnostics.Process.Start(filepath);
+                    if(loadWebPageOnURLEncounter) System.Diagnostics.Process.Start(filepath.Trim());
                     continue;
                 }
                 else if(!ExecuteProgram(filepath)) ActionController.addError("An error occured while executing a program.");

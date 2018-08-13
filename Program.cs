@@ -20,7 +20,7 @@ namespace DeveloperShortcut
         static void Main(string[] args)
         {
 
-            GetAppInfo();
+            Program.GetAppInfo();
             
             ActionController AC = new ActionController();
             ResourceController RC = new ResourceController();
