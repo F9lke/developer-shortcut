@@ -1,9 +1,12 @@
 ﻿using DeveloperShortcut.controller;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace DeveloperShortcut
 {
@@ -32,6 +35,13 @@ namespace DeveloperShortcut
             List<string> RoutineResources = RC.RoutineResources;
             
             Routine routine = AC.ProcessRoutine();
+
+            if(routine.RoutineName == "void")
+            {
+                AC.ExecuteProgram(System.Reflection.Assembly.GetEntryAssembly().Location);
+                Environment.Exit(0);
+            }
+
             if(!(AC.ExecuteRoutine(routine))) 
                 ActionController.addError("An error occured while executing the given routine.");
             

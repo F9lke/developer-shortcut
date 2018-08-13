@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Windows;
 using System.Threading.Tasks;
-using System.Diagnostics;
+using Microsoft.Win32;
 
 namespace DeveloperShortcut.controller
 {
@@ -24,6 +25,17 @@ namespace DeveloperShortcut.controller
             dynamic usr_payload = Console.ReadLine();
 
             if(!(usr_payload is string) && !(usr_payload is char)) ProcessRoutine();
+
+            if(usr_payload == "addAutostart")
+            {
+                ActionController.AddApplicationToStartup();
+                return AddRoutine("void");
+            }
+            if(usr_payload == "removeAutostart")
+            {
+                ActionController.RemoveApplicationFromStartup();
+                return AddRoutine("void");
+            }
  
             Routine routine = AddRoutine(usr_payload);
 
@@ -126,6 +138,41 @@ namespace DeveloperShortcut.controller
             }
 
         } // public static void addError(string msg)
+
+
+        /**
+         * Registers this app to the windows startup
+         */
+        public static void AddApplicationToStartup()
+        {
+
+            if(!System.Environment.OSVersion.ToString().Contains("Windows") && !System.Environment.OSVersion.ToString().Contains("Linux")) 
+                return;
+
+            string execPath = Directory.GetCurrentDirectory() + @"\DeveloperShortcut.exe";
+
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+            {
+                key.SetValue("DeveloperShortcut", execPath);
+            }
+
+        } // public static void AddApplicationToStartup()
+
+        /**
+         * Removes this app from the windows startup
+         */
+        public static void RemoveApplicationFromStartup()
+        {
+            
+            if(!System.Environment.OSVersion.ToString().Contains("Windows") && !System.Environment.OSVersion.ToString().Contains("Linux")) 
+                return;
+
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+            {
+                key.DeleteValue("DeveloperShortcut", false);
+            }
+
+        } // public static 
 
     }
 }
