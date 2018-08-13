@@ -22,7 +22,9 @@ namespace DeveloperShortcut.controller
         public List<string> FileResources = new List<string>();
         public List<string> RoutineResources = new List<string>();
 
-        // Loads any file resources from dedicated file into the FileResources Array
+        /**
+         * Loads any file resources from the dedicated file into the FileResources Array
+         */
         public void LoadExecutableResources()
         {
 
@@ -47,7 +49,9 @@ namespace DeveloperShortcut.controller
 
         } // public static void LoadExecutableResources()
 
-        // Loads any routine resources from dedicated file into the RoutineResources Array
+        /**
+         * Loads any file resources from the dedicated file into the RoutineResources Array
+         */
         public void LoadRoutineResources()
         {
 
@@ -74,7 +78,9 @@ namespace DeveloperShortcut.controller
 
         } // public static void LoadRoutineResources()
 
-        // Returns an the configured settings of a routine
+        /**
+         * Returns a list with program names that are listed in a given routine
+         */
         public string[] GetRoutineFiles(string routineName)
         {
 

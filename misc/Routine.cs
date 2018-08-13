@@ -13,7 +13,9 @@ namespace DeveloperShortcut
         public string RoutineName = "";
         public string[] RoutineFiles = new string[] { };
 
-        // Constructor for the Routine class
+        /**
+         * Constructor for the routine class
+         */
         public Routine(string routineName)
         {
 
@@ -24,7 +26,9 @@ namespace DeveloperShortcut
 
         } // public Routine()
 
-        // Checks if a routine or an option exists
+        /**
+         * Checks if a routine or an option exists
+         */
         public bool RoutineOrOptionExists()
         {
 

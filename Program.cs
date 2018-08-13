@@ -11,12 +11,15 @@ namespace DeveloperShortcut
     {
 
         readonly public static string AppName = "Developer Shortcut";
-        readonly public static string AppVersion = "1.0.0";
+        readonly public static string AppVersion = "1.1.0";
         readonly public static string AppAuthor = "Florian Götzrath";
 
-        // Main function of the program
+        /**
+         * Main function of the program
+         */
         static void Main(string[] args)
         {
+
             GetAppInfo();
             
             ActionController AC = new ActionController();
@@ -34,12 +37,14 @@ namespace DeveloperShortcut
             
         } // static void Main()
 
-        // Outputs the app information
+        /**
+         * Outputs app related information
+         */
         public static void GetAppInfo()
         {
             
             string msg = AppName + ": Version " + AppVersion + " by " + AppAuthor;
-            ConsoleColor color = ConsoleColor.Gray;
+            ConsoleColor color = ConsoleColor.DarkCyan;
 
             misc.Utilities.WriteColoredLine(msg, color);
 
