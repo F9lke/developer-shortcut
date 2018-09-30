@@ -30,6 +30,8 @@ namespace DeveloperShortcut
 
             RC.LoadExecutableResources();
             RC.LoadRoutineResources();
+            
+            //AC.ExecuteProgram(AppDomain.CurrentDomain.BaseDirectory + @"\DeveloperShortcut.exe");
 
             List<string> ExecutableResources = RC.FileResources;
             List<string> RoutineResources = RC.RoutineResources;

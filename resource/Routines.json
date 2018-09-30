@@ -1,25 +1,26 @@
 {
-  "conceptioning": {
-    "design": "Google_Chrome;Affinity_Designer;Explorer;Task_Manager;Color_Picker"
-  },
-  "development": {
-    "php": "PHPStorm;Google_Chrome;Xampp;WinSCP;Explorer;Task_Manager",
-    "js": "WebStorm;Postman;Git_Bash;Explorer;Task_Manager",
-    "c#": "Visual_Studio;Explorer;Task_Manager",
-    "c": "CLion;Explorer;Task_Manager;Stackoverflow",
-    "go": "GoLand;Explorer;Task_Manager;Stackoverflow",
-    "python": "PyCharm;Explorer;Task_Manager",
-    "java": "IntelliJ_IDEA;Explorer;Task_Manager;Stackoverflow",
-    "fast_dev": "Visual_Studio_Code;Explorer;Task_Manager;WinSCP;Xampp"
-  },
-  "testing": {
-    "rest": "Postman;PHPStorm;Xampp;Explorer;Task_Manager",
-    "cross_browser": "Internet_Expl;Opera;Mozilla_Firefox;Google_Chrome",
-    "test": "Postman;Spotify;Task_Manager;Filezilla;Explorer",
-    "web": "Color_Picker;Youtube_Music;Homepage"
-  },
-  "misc": {
-    "spotify": "Spotify",
-    "yt_music": "Youtube_Music"
-  }
+    "conceptioning": {
+        "design": "Google_Chrome;Affinity_Designer;Explorer;Task_Manager;Color_Picker"
+    },
+    "development": {
+        "php": "PHPStorm;Google_Chrome;Xampp;WinSCP;Explorer;Task_Manager",
+        "js": "WebStorm;Postman;Git_Bash;Explorer;Task_Manager",
+        "c#": "Visual_Studio;Explorer;Task_Manager",
+        "c": "CLion;Explorer;Task_Manager;Stackoverflow",
+        "go": "GoLand;Explorer;Task_Manager;Stackoverflow",
+        "python": "PyCharm;Explorer;Task_Manager",
+        "java": "IntelliJ_IDEA;Explorer;Task_Manager;Stackoverflow",
+        "fast_dev": "Visual_Studio_Code;Explorer;Task_Manager;WinSCP;Xampp",
+        "project": "PHPStorm;Xampp;Google_Chrome;Youtube_Music;Localhost_Project"
+    },
+    "testing": {
+        "rest": "Postman;PHPStorm;Xampp;Explorer;Task_Manager",
+        "cross_browser": "Internet_Expl;Opera;Mozilla_Firefox;Google_Chrome",
+        "test": "Postman;Spotify;Task_Manager;Filezilla;Explorer",
+        "web": "Color_Picker;Youtube_Music;Homepage"
+    },
+    "misc": {
+        "spotify": "Spotify",
+        "yt_music": "Youtube_Music"
+    }
 }

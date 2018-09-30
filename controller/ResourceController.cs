@@ -12,7 +12,7 @@ namespace DeveloperShortcut.controller
 {
     class ResourceController
     {
-
+        
         readonly public static string ProjectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
         readonly public static string ResourcePath = Path.Combine(ProjectPath, "resource\\");
